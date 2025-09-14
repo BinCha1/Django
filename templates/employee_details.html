@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- use tailwind css cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- use box icon cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="containe pt-5">
+      <div class="max-w-sm w-full lg:max-w-full lg:flex">
+        <div
+          class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+          style="background-image: url('/img/card-left.jpg')"
+          title="Woman holding a mug"
+        ></div>
+        <div
+          class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+        >
+          <div class="mb-8">
+            <p class="text-sm text-gray-600 flex items-center">
+              <img src="{{ employee.photo.url }}" alt="" />
+            </p>
+            Members only
+            <div class="text-gray-900 font-bold text-xl mb-2">
+              <p>{{ employee.first_name }}</p>
+              <p>{{ employee.email }}</p>
+              <p>{{ employee.phone }}</p>
+            </div>
+            <p class="text-gray-700 text-base">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatibus quia, nulla! Maiores et perferendis eaque,
+              exercitationem praesentium nihil.
+            </p>
+          </div>
+          <div class="flex items-center">
+            <img
+              class="w-10 h-10 rounded-full mr-4"
+              src="{{ employee.photo.url }}"
+              alt="Avatar of {{ employee.name }}"
+            />
+            <div class="text-sm">
+              <p class="text-gray-900 leading-none">{{ employee.name }}</p>
+              <p class="text-gray-600">Aug 18</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'home' %}" class="btn btn-primary">Back to home</a>
+    </div>
+  </body>
+</html>

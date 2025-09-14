@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.home),  # you need to import views from your app
+    path("", views.home, name="home"),  # you need to import views from your app
     path('employees/', include('employees.urls')),  # include the URLs from employees app forward req to employees/urls.py 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # this is for serving media files in development
